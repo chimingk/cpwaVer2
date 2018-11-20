@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/chimingk/cpwaVer2/issues"
   },
-  "homepage": "https://github.com/chimingk/cpwaVer2#readme"
+  "homepage": "https://github.com/chimingk/cpwaVer2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.12"
+  }
 }
