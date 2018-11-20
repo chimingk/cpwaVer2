@@ -1,0 +1,19 @@
+{
+  "name": "cpwaver2",
+  "version": "1.0.0",
+  "description": "Community Public Works App built with the MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chimingk/cpwaVer2.git"
+  },
+  "author": "Chi Kwan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chimingk/cpwaVer2/issues"
+  },
+  "homepage": "https://github.com/chimingk/cpwaVer2#readme"
+}
