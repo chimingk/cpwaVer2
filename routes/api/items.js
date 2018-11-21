@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
 // @desc	Create a Post
 // @access	Public
 // '/' parameter represents the api/items endpoint
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
 
 	const newItem = new Item( {
 
