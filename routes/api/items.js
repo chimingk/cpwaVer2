@@ -32,6 +32,31 @@ router.get('/', (req, res) => {
 });
 
 
+// @		POST api/items
+// @desc	Create a Post
+// @access	Public
+// '/' parameter represents the api/items endpoint
+router.get('/', (req, res) => {
+
+	const newItem = new Item( {
+
+		incidentID: 		 req.body.incidentID,
+		incidentType:        req.body.incidentType,
+		incidentAddress:     req.body.incidentAddress,
+		incidentCoords:      req.body.incidentCoords,
+		incidentDate:        req.body.incidentDate,
+		incidentDescription: req.body.incidentDescription,
+		incidentPictureURL:  req.body.incidentPictureURL,
+		incidentStatus:      req.body.incidentStatus,
+		managerNotes:        req.body.managerNotes,
+		statusNotes:         req.body.statusNotes
+
+	});
+
+	newItem.save().then(item => res.json(item));
+
+
+});
 
 
 
