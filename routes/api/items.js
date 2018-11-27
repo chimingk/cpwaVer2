@@ -19,7 +19,7 @@ const router = express.Router();
 const Item = require('../../models/Item');
 
 
-// @		GET api/items
+// @route	GET api/items
 // @desc	Get All Items
 // @access	Public
 // '/' parameter represents the api/items endpoint
@@ -32,8 +32,8 @@ router.get('/', (req, res) => {
 });
 
 
-// @		POST api/items
-// @desc	Create a Post
+// @route	POST api/items
+// @desc	Create an item
 // @access	Public
 // '/' parameter represents the api/items endpoint
 router.post('/', (req, res) => {
@@ -57,6 +57,21 @@ router.post('/', (req, res) => {
 
 
 });
+
+
+
+
+// @route	DELETE api/items
+// @desc	Delete an item
+// @access	Public
+// '/' parameter represents the api/items endpoint
+router.delete( '/:id', (req, res) => {
+
+	Item.findByID(req.params.id)
+	 .then(item => item.remove().then( () => res.json({success: true}) ) )
+	 .catch( err => res.status(404).json({success: false}));
+});
+
 
 
 
