@@ -1,0 +1,38 @@
+/* Global style sheet */
+
+/* This is only if I didn't use the col and row
+
+.remove-btn {
+	margin-left: 0.5 rem;
+}
+
+*/
+
+
+/* When it comes in as we add an item */
+.fade-enter {
+	opacity: 0.01;
+
+}
+
+
+/* Incident is added, we want 100% opacity and ease in */
+.fade-enter-active {
+	opacity: 1;
+	transition: opacity 1000ms ease-in;
+
+
+}
+
+
+.fade-exit {
+	opacity: 1;
+}
+
+
+.fade-exit-active {
+	opacity: 0.01;
+	transition: opacity 1000ms ease-in;
+}
+
+
