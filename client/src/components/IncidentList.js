@@ -11,7 +11,7 @@ class IncidentList extends Component {
 		items: [
 			{
         			incidentID: uuid(),
-				    incidentDate: '20181121',
+        			incidentDate: '20181121',
         			incidentStatus: 'Reported',
 			        incidentType: 'R',
         			incidentAddress: 'Agricultural Building 1',
