@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container , ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Button } from 'reactstrap';
+import { Container , ListGroup, ListGroupItem, ListGroupItemHeading, Button, Row, Col } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import uuid from 'uuid';
 
@@ -99,7 +99,7 @@ class IncidentList extends Component {
 				</Button>
 			
 
-				<h3 align = "center"> Updated Work Items </h3>
+				<h3 align = "center"> Current Public Work Cases </h3>
 
 
 				<ListGroup>
@@ -111,17 +111,36 @@ class IncidentList extends Component {
 						               incidentDescription, incidentPictureURL, managerNotes,
 						               statusNotes }) => (
 						               
-						               <CSSTransition key={incidentID} timeout={300} classNames="fade">
+						               <CSSTransition key={incidentID} timeout={1000} classNames="fade">
 
 						               	<ListGroupItem>
-						               		<ListGroupItemHeading>Issue Type: {incidentType}</ListGroupItemHeading>
-						               			<ListGroupItem tag="a" href={incidentPictureURL} target="_blank">Picture</ListGroupItem>
-						               			<ListGroupItemText>
+
+						               		<Row>
+						               			<Col><ListGroupItemHeading>Issue Type: {incidentType}</ListGroupItemHeading></Col>
+						               			
+						               			<Col align="right">
+												<Button
+													className = "remove-btn"
+						               				outline color = "danger"
+						               				size = "xs"
+
+						               				onClick={ () => {
+						               					this.setState(state => ({
+						               						items: state.items.filter(item => item.incidentID !== incidentID)
+						               					}));
+						               				}}
+						               			> Delete
+												</Button>
+												</Col>
+											</Row>
+						               			
+					               			
+						               			<a href={incidentPictureURL} target="_new">Picture</a> <br/>
 						               			Status: {incidentStatus} <br/>
 						               			Location: {incidentAddress} <br/>
 						               			Description: {incidentDescription} <br/>
 						               			Latest update: {statusNotes} <br/>
-						                   		</ListGroupItemText>
+						                   		
 						               	</ListGroupItem>
 
 						               </CSSTransition>
